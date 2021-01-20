@@ -1,7 +1,8 @@
 import React from "react";
-import "./Search.css";
+import "./Weather.css";
+import Forecast from "./Forecast";
 
-export default function Seach() {
+export default function Weather() {
     return (
         <div>
             <form className="row">
@@ -59,6 +60,7 @@ export default function Seach() {
                     </ul>
                 </div>
             </div>
+            <Forecast />
         </div>
 
 
