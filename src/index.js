@@ -13,7 +13,7 @@ function App() {
         <Forecast />
       </div>
       <small>
-        <a href="https://github.com/AneteCoding/my-first-app" target="_blank">Open-source code</a>, by  <a href="https://www.linkedin.com/in/anete-bogdanova-a5ba366a/" target="_blank">Anete</a>
+        <a href="https://github.com/AneteCoding/my-first-app" target="_blank" rel="noreferrer">Open-source code</a>, by  <a href="https://www.linkedin.com/in/anete-bogdanova-a5ba366a/" target="_blank" rel="noreferrer">Anete</a>
       </small>
     </div>
   );

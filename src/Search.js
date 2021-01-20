@@ -25,18 +25,18 @@ export default function Seach() {
             </p>
             <div className="row">
                 <div className="col-md-6">
-                    <div className="clearfix" className="current-wx">
+                    <div className="current-wx">
                         <h1>{"City"}</h1>
                         <i className="fas fa-sun icon" ></i>
                         <span className="temperature">
                             {10}
                         </span>
                         <span className="units">
-                            <a href="/" className="active">
+                            <a href="/" className="active" rel="noreferrer">
                                 °C{" "}
                             </a>{" "}
           |
-          <a href="/" >
+          <a href="/" rel="noreferrer">
                                 °F
           </a>
                         </span>
