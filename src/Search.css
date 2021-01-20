@@ -1,0 +1,13 @@
+button {
+  border: none;
+  border-radius: 4px;
+  background: #f5f5f5;
+  margin-left: 30px;
+  transition: all 200ms ease-in-out;
+}
+
+.search-city {
+  background: #f5f5f5;
+  border: none;
+  border-radius: 4px;
+}

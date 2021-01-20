@@ -1,8 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import "./App.css";
 import reportWebVitals from './reportWebVitals';
+import Search from "./Search";
+import Forecast from "./Forecast";
+
+function App() {
+  return (
+    <div className="App">
+      <div className="AppDesign">
+        <Search />
+        <Forecast />
+      </div>
+      <small>
+        <a href="https://github.com/AneteCoding/my-first-app" target="_blank">Open-source code</a>, by  <a href="https://www.linkedin.com/in/anete-bogdanova-a5ba366a/" target="_blank">Anete</a>
+      </small>
+    </div>
+  );
+}
 
 ReactDOM.render(
   <React.StrictMode>
@@ -10,8 +25,4 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
