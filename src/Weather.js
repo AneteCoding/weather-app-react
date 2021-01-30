@@ -1,45 +1,55 @@
 import React, { useState } from "react";
 import "./Weather.css";
+import DateInfo from "./DateInfo";
 import axios from "axios";
 
 
 export default function Weather(props) {
 
     const [weather, setWeather] = useState({ loaded: false });
-
-    function search() {
-        const apiKey = `e51c2a6a7756a9cab824e5d6224c7dcc`;
-        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
-        axios.get(apiUrl).then(showWeather);
-    }
+    const [city, setCity] = useState(props.defaultCity);
 
     function showWeather(response) {
         setWeather({
             loaded: true,
             temperature: response.data.main.temp,
+            date: new Date(response.data.dt * 1000),
             description: response.data.weather[0].description,
             humidity: response.data.main.humidity,
             wind: response.data.wind.speed,
             icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
             city: response.data.name
         });
+    }
 
+    function handleSubmit(event) {
+        event.preventDefault();
+        search();
+    }
 
+    function handleChange(event) {
+        setCity(event.target.value);
+    }
+
+    function search() {
+        const apiKey = `e51c2a6a7756a9cab824e5d6224c7dcc`;
+        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+        axios.get(apiUrl).then(showWeather);
     }
 
 
     if (weather.loaded) {
         return (
             <div className="Weather">
-                <form >
+                <form onSubmit={handleSubmit}>
                     <div className="row" >
                         <div className="col-8">
                             <input
                                 type="search"
                                 placeholder="Search City..."
                                 className="search-city"
-                                autoComplete="off"
                                 autoFocus="on"
+                                onChange={handleChange}
                             />
                         </div>
                         <div className="col-2 w-100">
@@ -55,7 +65,7 @@ export default function Weather(props) {
                     </div>
                 </form>
                 <p>
-                    Last updated: Friday 15:15 <span className="date"></span>
+                    <DateInfo date={weather.date} />
                 </p>
                 <div className="row">
                     <div className="col-md-6">
