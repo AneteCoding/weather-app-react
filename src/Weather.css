@@ -60,13 +60,6 @@ button {
   text-align: center;
 }
 
-.icon {
-  font-size: 30px;
-  bottom: -12px;
-  margin-right: 6px;
-  position: relative;
-  max-width: 80px;
-}
 .temperature {
   bottom: -12px;
   font-size: 32px;
