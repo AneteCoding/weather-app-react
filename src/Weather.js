@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./Weather.css";
 import DateInfo from "./DateInfo";
 import axios from "axios";
+import WxInfo from "./WxInfo";
+
 
 
 export default function Weather(props) {
@@ -17,7 +19,7 @@ export default function Weather(props) {
             description: response.data.weather[0].description,
             humidity: response.data.main.humidity,
             wind: response.data.wind.speed,
-            icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+            icon: response.data.weather[0].icon,
             city: response.data.name
         });
     }
@@ -64,46 +66,9 @@ export default function Weather(props) {
                         </div>
                     </div>
                 </form>
-                <p>
-                    <DateInfo date={weather.date} />
-                </p>
-                <div className="row">
-                    <div className="col-md-6">
-                        <div className="current-wx">
-                            <h1>{weather.city}</h1>
-                            <img src={weather.icon} alt={weather.description} />
-                            <span className="temperature">
-                                {Math.round(weather.temperature)}
-                            </span>
-                            <span className="units">
-                                <a href="/" className="active" rel="noreferrer">
-                                    °C{" "}
-                                </a>{" "}
-          |
-          <a href="/" rel="noreferrer">
-                                    °F
-          </a>
-                            </span>
-                        </div>
-                    </div>
-                    <div className="col-md-6">
-                        <ul>
-                            <li>
-                                Local time: <span>{"Friday 15:15"}</span>
-                            </li>
-                            <li>
-                                Humidity: <span>{weather.humidity}</span> %
-                        </li>
-                            <li>
-                                Wind: <span>{Math.round(weather.wind)}</span> m/s
-                        </li>
-                            <li className="text-capitalize">
-                                {weather.description}
-                            </li>
-                        </ul>
-                    </div>
-                </div>
 
+                <DateInfo date={weather.date} />
+                <WxInfo info={weather} />
             </div>
         );
     }
