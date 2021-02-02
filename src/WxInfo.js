@@ -1,5 +1,6 @@
 import React from "react";
 import WxIcon from "./WxIcon";
+import WxTemperature from "./WxTemperature";
 
 export default function Wxinfo(props) {
     return (
@@ -9,18 +10,7 @@ export default function Wxinfo(props) {
                     <div className="current-wx">
                         <h1>{props.info.city}</h1>
                         <WxIcon code={props.info.icon} />
-                        <span className="temperature">
-                            {Math.round(props.info.temperature)}
-                        </span>
-                        <span className="units">
-                            <a href="/" className="active" rel="noreferrer">
-                                °C{" "}
-                            </a>{" "}
-          |
-          <a href="/" rel="noreferrer">
-                                °F
-          </a>
-                        </span>
+                        <WxTemperature celsius={props.info.temperature} />
                     </div>
                 </div>
                 <div className="col-md-6">
