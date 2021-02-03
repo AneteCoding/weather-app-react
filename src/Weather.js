@@ -5,9 +5,6 @@ import axios from "axios";
 import WxInfo from "./WxInfo";
 import WxForecast from "./WxForecast";
 
-
-
-
 export default function Weather(props) {
 
     const [weather, setWeather] = useState({ loaded: false });

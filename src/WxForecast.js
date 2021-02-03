@@ -4,15 +4,15 @@ import axios from "axios";
 import WxForecastInfo from "./WxForecastInfo";
 
 export default function WxForecast(props) {
-    const [loaded, setLoaded] = useState(false);
+    const [isLoaded, setIsLoaded] = useState(false);
     const [forecast, setForecast] = useState(null);
 
     function handleForecast(response) {
         setForecast(response.info);
-        setLoaded(true);
+        setIsLoaded(true);
     }
 
-    if (loaded && props.city === forecast.city.name) {
+    if (isLoaded && props.city === forecast.city.name) {
         return (
             <div className="WxForecast row">
                 <WxForecastInfo info={forecast.list[0]} />
