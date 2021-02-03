@@ -3,6 +3,8 @@ import "./Weather.css";
 import DateInfo from "./DateInfo";
 import axios from "axios";
 import WxInfo from "./WxInfo";
+import WxForecast from "./WxForecast";
+
 
 
 
@@ -34,8 +36,8 @@ export default function Weather(props) {
     }
 
     function search() {
-        const apiKey = `e51c2a6a7756a9cab824e5d6224c7dcc`;
-        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+        let apiKey = "e51c2a6a7756a9cab824e5d6224c7dcc";
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
         axios.get(apiUrl).then(showWeather);
     }
 
@@ -69,11 +71,12 @@ export default function Weather(props) {
 
                 <DateInfo date={weather.date} />
                 <WxInfo info={weather} />
+                <WxForecast city={weather.city} />
             </div>
         );
     }
     else {
         search();
-        return "loading...";
+        return null;
     }
 }
