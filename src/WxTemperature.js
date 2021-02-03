@@ -28,7 +28,7 @@ export default function WxTemperature(props) {
           </a>
                 </span>
             </div>
-        )
+        );
     } else {
         return (
             <div className="WxTemperature">
@@ -43,6 +43,6 @@ export default function WxTemperature(props) {
                     °F
                 </span>
             </div>
-        )
+        );
     }
 }
