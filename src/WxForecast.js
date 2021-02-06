@@ -21,7 +21,6 @@ export default function WxForecast(props) {
                 <WxForecastInfo info={forecast.list[3]} />
                 <WxForecastInfo info={forecast.list[4]} />
                 <WxForecastInfo info={forecast.list[5]} />
-
             </div>
         );
     } else {

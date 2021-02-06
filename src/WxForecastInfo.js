@@ -2,9 +2,12 @@ import React from "react";
 import WxIcon from "./WxIcon";
 
 export default function WxForecastInfo(props) {
-    function hrs() {
+    function hours() {
         let date = new Date(props.info.dt * 1000);
         let hrs = date.getHours();
+        if (hrs < 10) {
+            hrs = `0${hrs}`;
+        }
         return `${hrs}:00`;
     }
 
@@ -15,7 +18,7 @@ export default function WxForecastInfo(props) {
 
     return (
         <div className="WxForecastInfo col">
-            {hrs()}
+            {hours()}
             <WxIcon code={props.info.weather[0].icon} />
             {temperature()}
         </div>

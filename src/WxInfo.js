@@ -1,5 +1,6 @@
 import React from "react";
 import WxIcon from "./WxIcon";
+import LocalTime from "./LocalTime";
 import WxTemperature from "./WxTemperature";
 
 export default function Wxinfo(props) {
@@ -7,7 +8,7 @@ export default function Wxinfo(props) {
         <div className="Wxinfo">
 
             <div className="row">
-                <div className="col-md-6">
+                <div className="col-6">
                     <div className="current-wx">
                         <h1>{props.info.city}</h1>
                         <div className="float-left">
@@ -18,8 +19,11 @@ export default function Wxinfo(props) {
                         </div>
                     </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-6">
                     <ul>
+                        <li>
+                            Local Time: <LocalTime tz={props.info.timezone} />
+                        </li>
                         <li>
                             Humidity: <span>{props.info.humidity}</span> %
                         </li>
