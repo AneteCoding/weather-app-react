@@ -14,13 +14,14 @@ export default function WxForecast(props) {
 
     if (isLoaded && props.city === forecast.city.name) {
         return (
-            <div className="WxForecast row">
-                <WxForecastInfo info={forecast.list[0]} />
-                <WxForecastInfo info={forecast.list[1]} />
-                <WxForecastInfo info={forecast.list[2]} />
-                <WxForecastInfo info={forecast.list[3]} />
-                <WxForecastInfo info={forecast.list[4]} />
-                <WxForecastInfo info={forecast.list[5]} />
+            <div className="clearfix">
+                <div className="WxForecast row">
+                    <WxForecastInfo className="col-sm-2" info={forecast.list[7]} />
+                    <WxForecastInfo className="col-sm-2" info={forecast.list[15]} />
+                    <WxForecastInfo className="col-sm-2" info={forecast.list[23]} />
+                    <WxForecastInfo className="col-sm-2" info={forecast.list[31]} />
+                    <WxForecastInfo className="col-sm-2" info={forecast.list[39]} />
+                </div>
             </div>
         );
     } else {

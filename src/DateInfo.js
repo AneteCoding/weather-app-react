@@ -31,7 +31,7 @@ export default function DateInfo(props) {
 
     return (
         <div>
-            {hrs}:{min} {day}, {month} {date} {year}
+            {hrs}:{min} {day}, {month} {date}, {year}
         </div>
 
     );
