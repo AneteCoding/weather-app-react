@@ -21,9 +21,8 @@ export default function WxTemperature(props) {
                 <span>
                     {Math.round(props.celsius)}
                 </span>
-                <span className="units"> °C
-                |
-          <a href="/" onClick={convertToFahrenheit}>
+                <span className="units">
+                    °C | <a href="/" onClick={convertToFahrenheit}>
                         °F
           </a>
                 </span>
@@ -38,8 +37,7 @@ export default function WxTemperature(props) {
                 <span className="units">
                     <a href="/" onClick={convertToCelsius}>
                         °C
-                    </a>
-          |
+                    </a>  |
                     °F
                 </span>
             </div>

@@ -42,29 +42,36 @@ export default function Weather(props) {
     if (weather.loaded) {
         return (
             <div className="Weather">
+
                 <form onSubmit={handleSubmit}>
                     <div className="row" >
-                        <div className="col-8">
+                        <div className="col-6">
                             <input
                                 type="search"
                                 placeholder="Search City..."
-                                className="search-city"
+                                className="form-control"
                                 autoFocus="on"
                                 onChange={handleChange}
                             />
                         </div>
-                        <div className="col-2 w-100">
-                            <button>
-                                <i className="fas fa-search"></i>
-                            </button>
+                        <div className="col-2 search">
+                            <input
+                                type="submit"
+                                class="btn"
+                                value=" 🔍 "
+                            />
                         </div>
-                        <div className="col-2 w-100">
-                            <button >
-                                <i class="fas fa-location-arrow" id="location"></i>
-                            </button>
+                        <div className="col-2 location">
+                            <input
+                                type="submit"
+                                class="btn"
+                                value=" 📍 "
+                            />
+
                         </div>
                     </div>
                 </form>
+
 
                 <DateInfo date={weather.date} />
                 <WxInfo info={weather} />

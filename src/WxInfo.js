@@ -5,19 +5,21 @@ import WxTemperature from "./WxTemperature";
 export default function Wxinfo(props) {
     return (
         <div className="Wxinfo">
+
             <div className="row">
                 <div className="col-md-6">
                     <div className="current-wx">
                         <h1>{props.info.city}</h1>
-                        <WxIcon code={props.info.icon} />
-                        <WxTemperature celsius={props.info.temperature} />
+                        <div className="float-left">
+                            <WxIcon code={props.info.icon} />
+                        </div>
+                        <div className="float-left">
+                            <WxTemperature celsius={props.info.temperature} />
+                        </div>
                     </div>
                 </div>
                 <div className="col-md-6">
                     <ul>
-                        <li>
-                            Local time: <span>{"Friday 15:15"}</span>
-                        </li>
                         <li>
                             Humidity: <span>{props.info.humidity}</span> %
                         </li>

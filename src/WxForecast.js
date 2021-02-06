@@ -8,7 +8,7 @@ export default function WxForecast(props) {
     const [forecast, setForecast] = useState(null);
 
     function handleForecast(response) {
-        setForecast(response.info);
+        setForecast(response.data);
         setIsLoaded(true);
     }
 
