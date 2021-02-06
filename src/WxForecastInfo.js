@@ -1,5 +1,5 @@
 import React from "react";
-import WxIcon from "./WxIcon";
+import WxIconForecast from "./WxIconForecast";
 
 export default function WxForecastInfo(props) {
     function day() {
@@ -18,7 +18,7 @@ export default function WxForecastInfo(props) {
         <div className="WxForecastInfo col">
             {day()}
             <div>
-                <WxIcon code={props.info.weather[0].icon} />
+                <WxIconForecast code={props.info.weather[0].icon} />
             </div>
             {temperature()}
         </div>
